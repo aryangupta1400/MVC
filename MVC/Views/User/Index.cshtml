@@ -1,0 +1,35 @@
+﻿@model  MVC.Models.UserModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Register User</h2>
+
+@using (Html.BeginForm("Create", "User", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.UserName)
+        @Html.TextBoxFor(m => m.UserName, new { @class = "", placeholder = "Enter username" }) @*class is for adding CSS file*@
+        <br />
+        @Html.LabelFor(x => x.Mobile)
+        @Html.TextBoxFor(m => m.Mobile, new { @class = "", placeholder = "Enter mobile no." })
+        <br />
+        @Html.LabelFor(x => x.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "", placeholder = "Enter email-id" })
+        <br />
+        @Html.LabelFor(x => x.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "", placeholder = "Enter password" })
+        <br />
+        @Html.LabelFor(x => x.Gender)
+        <label>Male</label>
+        @Html.RadioButtonFor(m => m.Gender, "Male")
+        <label>Female</label>
+        @Html.RadioButtonFor(m => m.Gender, "Female")
+
+        <br />
+
+        <input type="submit" value="Register" />
+    </div>
+}
+
